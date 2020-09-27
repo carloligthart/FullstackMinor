@@ -13,12 +13,5 @@ public class SimpleControllerApplication {
 		SpringApplication.run(SimpleControllerApplication.class, args);
 	}
 
-	@Service
-	@Profile("profile1")
-	public static class StringService implements IStringService {
 
-		public String reverseString(String text) {
-			return new StringBuilder(text).reverse().toString();
-		}
-	}
 }

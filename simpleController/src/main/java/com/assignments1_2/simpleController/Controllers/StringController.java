@@ -16,17 +16,6 @@ public class StringController {
     @Autowired
     private IStringService stringService;
 
-
-    @RequestMapping("/hello")
-    public String SayHello() {
-        return "hello";
-    }
-
-    @RequestMapping("/hi")
-    public String SayHi() {
-        return "hi";
-    }
-
     @RequestMapping("/stringreverser/{text}")
     public String reverseString(@PathVariable String text) {
         return stringService.reverseString(text);

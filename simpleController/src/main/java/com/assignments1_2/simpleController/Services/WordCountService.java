@@ -4,8 +4,6 @@ import com.assignments1_2.simpleController.Repositories.WordCountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-
 @Service
 public class WordCountService {
 

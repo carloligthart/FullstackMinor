@@ -15,6 +15,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -41,17 +42,102 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.assignments1_2.simpleController.Services" />
+      <recent name="com.assignments1_2.simpleController.Controllers" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.SimpleControllerApplication">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in simpleController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="simpleController" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringControllerTest.TestCountWords" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="simpleController" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.assignments1_2.simpleController.Controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.assignments1_2.simpleController.Controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.assignments1_2.simpleController.Controllers.StringControllerTest" />
+      <option name="METHOD_NAME" value="TestCountWords" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringControllerTest.TestReverseString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="simpleController" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.assignments1_2.simpleController.Controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.assignments1_2.simpleController.Controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.assignments1_2.simpleController.Controllers.StringControllerTest" />
+      <option name="METHOD_NAME" value="TestReverseString" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringReverseServiceTest.TestReverseString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="simpleController" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.assignments1_2.simpleController.Services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.assignments1_2.simpleController.Services" />
+      <option name="MAIN_CLASS_NAME" value="com.assignments1_2.simpleController.Services.StringReverseServiceTest" />
+      <option name="METHOD_NAME" value="TestReverseString" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringReverseServiceTest.reverseString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="simpleController" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.assignments1_2.simpleController.Services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.assignments1_2.simpleController.Services" />
+      <option name="MAIN_CLASS_NAME" value="com.assignments1_2.simpleController.Services.StringReverseServiceTest" />
+      <option name="METHOD_NAME" value="reverseString" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -63,6 +149,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in simpleController" />
+        <item itemvalue="JUnit.StringReverseServiceTest.TestReverseString" />
+        <item itemvalue="JUnit.StringReverseServiceTest.reverseString" />
+        <item itemvalue="JUnit.StringControllerTest.TestCountWords" />
+        <item itemvalue="JUnit.StringControllerTest.TestReverseString" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -72,7 +167,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1600973492868</updated>
-      <workItem from="1600973495936" duration="16553000" />
+      <workItem from="1600973495936" duration="24446000" />
+      <workItem from="1601219026149" duration="8348000" />
     </task>
     <servers />
   </component>
@@ -84,6 +180,10 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1506" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1600975412567" />
+    <state x="-1206" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601220340934">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1206" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601220340934" />
     <state x="-1155" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1601208584887">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
@@ -102,50 +202,71 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1180" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1600974779564" />
-    <state width="1877" height="25" key="GridCell.Tab.0.bottom" timestamp="1601209263632">
+    <state width="1877" height="357" key="GridCell.Tab.0.bottom" timestamp="1601226720380">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="25" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601209263632" />
+    <state width="1877" height="357" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601226720380" />
     <state width="1877" height="43" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601139879475" />
-    <state width="1877" height="25" key="GridCell.Tab.0.center" timestamp="1601209263632">
+    <state width="1877" height="357" key="GridCell.Tab.0.center" timestamp="1601226720380">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="25" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601209263632" />
+    <state width="1877" height="357" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601226720380" />
     <state width="1877" height="43" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601139879475" />
-    <state width="1877" height="25" key="GridCell.Tab.0.left" timestamp="1601209263631">
+    <state width="1877" height="357" key="GridCell.Tab.0.left" timestamp="1601226720380">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="25" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601209263631" />
+    <state width="1877" height="357" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601226720380" />
     <state width="1877" height="43" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601139879475" />
-    <state width="1877" height="25" key="GridCell.Tab.0.right" timestamp="1601209263632">
+    <state width="1877" height="357" key="GridCell.Tab.0.right" timestamp="1601226720380">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="25" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601209263632" />
+    <state width="1877" height="357" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601226720380" />
     <state width="1877" height="43" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601139879475" />
-    <state width="1877" height="25" key="GridCell.Tab.1.bottom" timestamp="1601209263632">
+    <state width="1877" height="607" key="GridCell.Tab.1.bottom" timestamp="1601226547102">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="25" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601209263632" />
+    <state width="1877" height="607" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601226547102" />
     <state width="1877" height="43" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601139879476" />
-    <state width="1877" height="25" key="GridCell.Tab.1.center" timestamp="1601209263632">
+    <state width="1877" height="607" key="GridCell.Tab.1.center" timestamp="1601226547102">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="25" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601209263632" />
+    <state width="1877" height="607" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601226547102" />
     <state width="1877" height="43" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601139879475" />
-    <state width="1877" height="25" key="GridCell.Tab.1.left" timestamp="1601209263632">
+    <state width="1877" height="607" key="GridCell.Tab.1.left" timestamp="1601226547102">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="25" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601209263632" />
+    <state width="1877" height="607" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601226547102" />
     <state width="1877" height="43" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601139879475" />
-    <state width="1877" height="25" key="GridCell.Tab.1.right" timestamp="1601209263632">
+    <state width="1877" height="607" key="GridCell.Tab.1.right" timestamp="1601226547102">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="25" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601209263632" />
+    <state width="1877" height="607" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601226547102" />
     <state width="1877" height="43" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601139879476" />
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1601139155260">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="-1236" y="306" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1601225037487">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1600979396824" />
+    <state x="-1236" y="306" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601225037487" />
+    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1601212571979">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601212571979" />
     <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601139155260" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/simpleController/src/test/java/com/assignments1_2/simpleController/Services/StringReverseServiceTest.java</url>
+          <line>16</line>
+          <properties class="com.assignments1_2.simpleController.Services.StringReverseServiceTest" method="TestReverseString">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/simpleController$All_in_simpleController__2_.ic" NAME="All in simpleController (2) Coverage Results" MODIFIED="1601220740669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
