@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/FullstackMinor.iml" filepath="$PROJECT_DIR$/.idea/FullstackMinor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/simpleController/simpleController.iml" filepath="$PROJECT_DIR$/simpleController/simpleController.iml" />
     </modules>
   </component>
 </project>

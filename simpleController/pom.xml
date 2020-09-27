@@ -14,6 +14,15 @@
 	<name>simpleController</name>
 	<description>Demo project for Spring Boot</description>
 
+	<profiles>
+		<profile>
+			<id>profile1</id>
+		</profile>
+		<profile>
+			<id>profile2</id>
+		</profile>
+	</profiles>
+
 	<properties>
 		<java.version>14</java.version>
 	</properties>
