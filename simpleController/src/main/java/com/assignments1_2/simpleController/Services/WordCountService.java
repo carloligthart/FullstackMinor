@@ -7,16 +7,18 @@ import org.springframework.stereotype.Service;
 @Service
 public class WordCountService {
 
+    private final WordCountRepository wordCountRepository;
+
     @Autowired
-    private WordCountRepository wordCountRepository;
+    public WordCountService (WordCountRepository wordCountRepository) {
+        this.wordCountRepository = wordCountRepository;
+    }
 
     public int getWordCount(String text) {
         if (wordCountRepository.getCount(text) == null) {
-            System.out.println("string not in memory, computing the word count");
             return countWords(text);
         }
         else {
-            System.out.println("string in memory, using value stored in memory");
             return wordCountRepository.getCount(text);
         }
     }

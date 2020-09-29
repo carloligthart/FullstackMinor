@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
-@Profile("profile2")
+@Profile("Caps")
 public class StringCapsService implements IStringService {
 
     public String reverseString(String text) {

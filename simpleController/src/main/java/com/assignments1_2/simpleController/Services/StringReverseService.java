@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
-@Profile("profile1")
+@Profile("Reverse")
 public class StringReverseService implements IStringService {
 
     public String reverseString(String text) {

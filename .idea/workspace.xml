@@ -14,8 +14,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -49,6 +49,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.assignments1_2.simpleController.Repositories" />
       <recent name="com.assignments1_2.simpleController.Services" />
       <recent name="com.assignments1_2.simpleController.Controllers" />
     </key>
@@ -70,7 +71,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in simpleController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in simpleController (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="simpleController" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
@@ -78,34 +79,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringControllerTest.TestCountWords" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in simpleController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="simpleController" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.assignments1_2.simpleController.Controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.assignments1_2.simpleController.Controllers" />
-      <option name="MAIN_CLASS_NAME" value="com.assignments1_2.simpleController.Controllers.StringControllerTest" />
-      <option name="METHOD_NAME" value="TestCountWords" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StringControllerTest.TestReverseString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="simpleController" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.assignments1_2.simpleController.Controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.assignments1_2.simpleController.Controllers" />
-      <option name="MAIN_CLASS_NAME" value="com.assignments1_2.simpleController.Controllers.StringControllerTest" />
-      <option name="METHOD_NAME" value="TestReverseString" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -126,7 +103,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringReverseServiceTest.reverseString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WordCountServiceTest.TestCountWords" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="simpleController" />
       <extension name="coverage">
         <pattern>
@@ -135,8 +112,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.assignments1_2.simpleController.Services" />
-      <option name="MAIN_CLASS_NAME" value="com.assignments1_2.simpleController.Services.StringReverseServiceTest" />
-      <option name="METHOD_NAME" value="reverseString" />
+      <option name="MAIN_CLASS_NAME" value="com.assignments1_2.simpleController.Services.WordCountServiceTest" />
+      <option name="METHOD_NAME" value="TestCountWords" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WordCountServiceTest.TestGetWordCount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="simpleController" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.assignments1_2.simpleController.Services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.assignments1_2.simpleController.Services" />
+      <option name="MAIN_CLASS_NAME" value="com.assignments1_2.simpleController.Services.WordCountServiceTest" />
+      <option name="METHOD_NAME" value="TestGetWordCount" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -151,11 +144,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.WordCountServiceTest.TestCountWords" />
+        <item itemvalue="JUnit.WordCountServiceTest.TestGetWordCount" />
+        <item itemvalue="JUnit.All in simpleController (1)" />
         <item itemvalue="JUnit.All in simpleController" />
         <item itemvalue="JUnit.StringReverseServiceTest.TestReverseString" />
-        <item itemvalue="JUnit.StringReverseServiceTest.reverseString" />
-        <item itemvalue="JUnit.StringControllerTest.TestCountWords" />
-        <item itemvalue="JUnit.StringControllerTest.TestReverseString" />
       </list>
     </recent_temporary>
   </component>
@@ -168,7 +161,7 @@
       <option name="presentableId" value="Default" />
       <updated>1600973492868</updated>
       <workItem from="1600973495936" duration="24446000" />
-      <workItem from="1601219026149" duration="8348000" />
+      <workItem from="1601219026149" duration="18586000" />
     </task>
     <servers />
   </component>
@@ -202,54 +195,66 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1180" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1600974779564" />
-    <state width="1877" height="357" key="GridCell.Tab.0.bottom" timestamp="1601226720380">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="194" key="GridCell.Tab.0.bottom" timestamp="1601323651480">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="357" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601226720380" />
+    <state width="1877" height="273" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601231092843" />
+    <state width="1877" height="492" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1601295242530" />
     <state width="1877" height="43" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601139879475" />
-    <state width="1877" height="357" key="GridCell.Tab.0.center" timestamp="1601226720380">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="194" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601323651480" />
+    <state width="1877" height="194" key="GridCell.Tab.0.center" timestamp="1601323651479">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="357" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601226720380" />
+    <state width="1877" height="273" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601231092843" />
+    <state width="1877" height="492" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1601295242529" />
     <state width="1877" height="43" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601139879475" />
-    <state width="1877" height="357" key="GridCell.Tab.0.left" timestamp="1601226720380">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="194" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601323651479" />
+    <state width="1877" height="194" key="GridCell.Tab.0.left" timestamp="1601323651479">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="357" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601226720380" />
+    <state width="1877" height="273" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601231092842" />
+    <state width="1877" height="492" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1601295242529" />
     <state width="1877" height="43" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601139879475" />
-    <state width="1877" height="357" key="GridCell.Tab.0.right" timestamp="1601226720380">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="194" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601323651479" />
+    <state width="1877" height="194" key="GridCell.Tab.0.right" timestamp="1601323651479">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="357" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601226720380" />
+    <state width="1877" height="273" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601231092843" />
+    <state width="1877" height="492" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1601295242530" />
     <state width="1877" height="43" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601139879475" />
-    <state width="1877" height="607" key="GridCell.Tab.1.bottom" timestamp="1601226547102">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="194" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601323651479" />
+    <state width="1877" height="194" key="GridCell.Tab.1.bottom" timestamp="1601323651480">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="607" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601226547102" />
     <state width="1877" height="43" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601139879476" />
-    <state width="1877" height="607" key="GridCell.Tab.1.center" timestamp="1601226547102">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="194" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601323651480" />
+    <state width="1877" height="194" key="GridCell.Tab.1.center" timestamp="1601323651480">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="607" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601226547102" />
     <state width="1877" height="43" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601139879475" />
-    <state width="1877" height="607" key="GridCell.Tab.1.left" timestamp="1601226547102">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="194" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601323651480" />
+    <state width="1877" height="194" key="GridCell.Tab.1.left" timestamp="1601323651480">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="607" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601226547102" />
     <state width="1877" height="43" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601139879475" />
-    <state width="1877" height="607" key="GridCell.Tab.1.right" timestamp="1601226547102">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="194" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601323651480" />
+    <state width="1877" height="194" key="GridCell.Tab.1.right" timestamp="1601323651480">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="607" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601226547102" />
     <state width="1877" height="43" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601139879476" />
-    <state x="-1236" y="306" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1601225037487">
+    <state width="1877" height="194" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601323651480" />
+    <state x="-1236" y="306" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1601230477983">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1236" y="306" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601225037487" />
-    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1601212571979">
+    <state x="-1236" y="306" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601230477983" />
+    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1601230547205">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601212571979" />
+    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601230547205" />
     <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601139155260" />
   </component>
   <component name="XDebuggerManager">
