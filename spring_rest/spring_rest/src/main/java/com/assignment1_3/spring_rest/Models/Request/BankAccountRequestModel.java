@@ -1,11 +1,7 @@
 package com.assignment1_3.spring_rest.Models.Request;
 
-import com.assignment1_3.spring_rest.Models.AccountHolderDto;
-
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import java.util.List;
 
 public class BankAccountRequestModel {
 

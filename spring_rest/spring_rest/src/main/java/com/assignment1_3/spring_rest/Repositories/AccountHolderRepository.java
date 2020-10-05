@@ -1,6 +1,6 @@
 package com.assignment1_3.spring_rest.Repositories;
 
-import com.assignment1_3.spring_rest.Models.AccountHolderDto;
+import com.assignment1_3.spring_rest.Models.Dto.AccountHolderDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -15,6 +15,10 @@ public class AccountHolderRepository {
     @Autowired
     public AccountHolderRepository() {
         accountHolders = new HashMap<Long, AccountHolderDto>();
+    }
+
+    public boolean exists(Long id) {
+        return accountHolders.containsKey(id);
     }
 
     public Collection<AccountHolderDto> getAccountHolders() {

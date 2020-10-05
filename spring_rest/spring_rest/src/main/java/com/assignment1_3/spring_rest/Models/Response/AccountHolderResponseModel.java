@@ -1,10 +1,5 @@
 package com.assignment1_3.spring_rest.Models.Response;
 
-import com.assignment1_3.spring_rest.Models.AccountHolderDto;
-import com.assignment1_3.spring_rest.Models.BankAccountDto;
-
-import java.util.List;
-
 public class AccountHolderResponseModel {
 
     private Long id;

@@ -1,8 +1,9 @@
 package com.assignment1_3.spring_rest.Controllers;
 
-import com.assignment1_3.spring_rest.Models.AccountHolderDto;
-import com.assignment1_3.spring_rest.Models.BankAccountDto;
-import com.assignment1_3.spring_rest.Models.Request.AccountHolderRequestModel;
+import com.assignment1_3.spring_rest.Exceptions.AccountHolderNotFoundException;
+import com.assignment1_3.spring_rest.Exceptions.BankAccountNotFoundException;
+import com.assignment1_3.spring_rest.Models.Dto.AccountHolderDto;
+import com.assignment1_3.spring_rest.Models.Dto.BankAccountDto;
 import com.assignment1_3.spring_rest.Models.Request.BankAccountRequestModel;
 import com.assignment1_3.spring_rest.Models.Response.AccountHolderResponseModel;
 import com.assignment1_3.spring_rest.Models.Response.BankAccountResponseModel;
@@ -14,8 +15,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 
 import javax.validation.Valid;
+import java.net.URI;
 import java.util.*;
 
 @RestController
@@ -49,7 +52,7 @@ public class BankAccountController {
         Collection<BankAccountDto> retrievedBankAccounts = bankAccountService.getBankAccounts();
 
         if (retrievedBankAccounts == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            throw new BankAccountNotFoundException("No BankAccounts found");
         }
         else {
             for (BankAccountDto dto : retrievedBankAccounts) {
@@ -58,7 +61,7 @@ public class BankAccountController {
                 returnValue.add(responseModel);
             }
 
-            return new ResponseEntity<>(returnValue, HttpStatus.OK);
+            return ResponseEntity.ok(returnValue);
         }
     }
 
@@ -69,11 +72,11 @@ public class BankAccountController {
         BankAccountDto retrievedBankAccountDto = bankAccountService.getBankAccountById(id);
 
         if (retrievedBankAccountDto == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            throw new BankAccountNotFoundException(id);
         }
         else {
             BeanUtils.copyProperties(retrievedBankAccountDto, returnValue);
-            return new ResponseEntity<>(returnValue, HttpStatus.OK);
+            return ResponseEntity.ok(returnValue);
         }
     }
 
@@ -86,7 +89,12 @@ public class BankAccountController {
         BankAccountDto createdBankAccountDto = bankAccountService.createBankAccount(bankAccountDto);
         BeanUtils.copyProperties(createdBankAccountDto, returnValue);
 
-        return new ResponseEntity<>(returnValue, HttpStatus.CREATED);
+        final URI uri = MvcUriComponentsBuilder.fromController(getClass())
+                .path("/{id}")
+                .buildAndExpand(returnValue.getId())
+                .toUri();
+
+        return ResponseEntity.created(uri).body(returnValue);
     }
 
     @PutMapping("/{id}")
@@ -98,11 +106,11 @@ public class BankAccountController {
         BankAccountDto updatedBankAccountDto = bankAccountService.updateBankAccount(id, bankAccountDto);
 
         if (updatedBankAccountDto == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            throw new BankAccountNotFoundException(id);
         }
         else {
             BeanUtils.copyProperties(updatedBankAccountDto, returnValue);
-            return new ResponseEntity<>(returnValue, HttpStatus.OK);
+            return ResponseEntity.noContent().build();
         }
     }
 
@@ -113,43 +121,43 @@ public class BankAccountController {
         BankAccountDto deletedBankAccount = bankAccountService.deleteBankAccount(id);
 
         if (deletedBankAccount == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            throw new BankAccountNotFoundException(id);
         }
         else {
             BeanUtils.copyProperties(deletedBankAccount, returnValue);
-            return new ResponseEntity<>(returnValue, HttpStatus.OK);
+            return ResponseEntity.noContent().build();
         }
     }
 
-    @PatchMapping("/{id}")
+    @PutMapping("/{id}/block")
     public ResponseEntity<BankAccountResponseModel> blockBankAccount(@PathVariable("id") Long id) {
 
         BankAccountResponseModel returnValue = new BankAccountResponseModel();
         BankAccountDto patchedBankAccount = bankAccountService.blockBankAccount(id);
 
         if (patchedBankAccount == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            throw new BankAccountNotFoundException(id);
         }
         else {
             BeanUtils.copyProperties(patchedBankAccount, returnValue);
-            return new ResponseEntity<>(returnValue, HttpStatus.OK);
+            return ResponseEntity.noContent().build();
         }
     }
 
-//    @PatchMapping("/{id}")
-//    public ResponseEntity<BankAccountResponseModel> unBlockBankAccount(@PathVariable("id") Long id) {
-//
-//        BankAccountResponseModel returnValue = new BankAccountResponseModel();
-//        BankAccountDto patchedBankAccount = bankAccountService.unBlockBankAccount(id);
-//
-//        if (patchedBankAccount == null) {
-//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-//        }
-//        else {
-//            BeanUtils.copyProperties(patchedBankAccount, returnValue);
-//            return new ResponseEntity<>(returnValue, HttpStatus.OK);
-//        }
-//    }
+    @PutMapping("/{id}/unblock")
+    public ResponseEntity<BankAccountResponseModel> unBlockBankAccount(@PathVariable("id") Long id) {
+
+        BankAccountResponseModel returnValue = new BankAccountResponseModel();
+        BankAccountDto patchedBankAccount = bankAccountService.unBlockBankAccount(id);
+
+        if (patchedBankAccount == null) {
+            throw new BankAccountNotFoundException(id);
+        }
+        else {
+            BeanUtils.copyProperties(patchedBankAccount, returnValue);
+            return ResponseEntity.noContent().build();
+        }
+    }
 
     @GetMapping("{id}/holders")
     public ResponseEntity<HashSet<AccountHolderResponseModel>> getAccountHoldersByBankAccountId(@PathVariable("id") Long id) {
@@ -158,7 +166,7 @@ public class BankAccountController {
         HashSet<AccountHolderDto> retrievedAccountHolders = bankAccountService.getAccountHoldersByBankAccountId(id);
 
         if (retrievedAccountHolders == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            throw new AccountHolderNotFoundException("No AccountHolders found");
         }
         else {
             for (AccountHolderDto dto : retrievedAccountHolders) {
@@ -167,19 +175,19 @@ public class BankAccountController {
                 returnValue.add(responseModel);
             }
 
-            return new ResponseEntity<>(returnValue, HttpStatus.OK);
+            return ResponseEntity.ok(returnValue);
         }
     }
 
-    @PostMapping("{bankAccountId}/holders/{accountHolderId}")
+    @PutMapping("{bankAccountId}/holders/{accountHolderId}/linkaccount")
     public ResponseEntity<BankAccountResponseModel> linkAccountHolder(@PathVariable("bankAccountId") Long bankAccountId, @PathVariable("accountHolderId") Long accountHolderId) {
         bankAccountService.linkAccountHolder(bankAccountId, accountHolderId);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return ResponseEntity.noContent().build();
     }
 
-    @DeleteMapping("{bankAccountId}/holders/{accountHolderId}")
+    @DeleteMapping("{bankAccountId}/holders/{accountHolderId}/unlinkaccount")
     public ResponseEntity<BankAccountResponseModel> unLinkAccountHolder(@PathVariable("bankAccountId") Long bankAccountId, @PathVariable("accountHolderId") Long accountHolderId) {
         bankAccountService.unLinkAccountHolder(bankAccountId, accountHolderId);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return ResponseEntity.noContent().build();
     }
 }

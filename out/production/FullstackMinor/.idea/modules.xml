@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/FullstackMinor.iml" filepath="$PROJECT_DIR$/.idea/FullstackMinor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_rest/spring_rest/spring_rest.iml" filepath="$PROJECT_DIR$/spring_rest/spring_rest/spring_rest.iml" />
     </modules>
   </component>
 </project>

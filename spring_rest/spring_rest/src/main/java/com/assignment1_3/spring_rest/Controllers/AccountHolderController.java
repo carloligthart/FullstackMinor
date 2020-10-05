@@ -1,26 +1,26 @@
 package com.assignment1_3.spring_rest.Controllers;
 
-import com.assignment1_3.spring_rest.Models.AccountHolderDto;
-import com.assignment1_3.spring_rest.Models.BankAccountDto;
+import com.assignment1_3.spring_rest.Exceptions.AccountHolderNotFoundException;
+import com.assignment1_3.spring_rest.Exceptions.BankAccountNotFoundException;
+import com.assignment1_3.spring_rest.Models.Dto.AccountHolderDto;
+import com.assignment1_3.spring_rest.Models.Dto.BankAccountDto;
 import com.assignment1_3.spring_rest.Models.Request.AccountHolderRequestModel;
 import com.assignment1_3.spring_rest.Models.Response.AccountHolderResponseModel;
 import com.assignment1_3.spring_rest.Models.Response.BankAccountResponseModel;
-import com.assignment1_3.spring_rest.Repositories.BankAccountAccountHolderRepository;
 import com.assignment1_3.spring_rest.Services.AccountHolderService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.http.CacheControl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 import javax.validation.Valid;
-import java.sql.SQLOutput;
+import java.net.URI;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
+
+
 
 @RestController
 @RequestMapping("/holders")
@@ -47,28 +47,21 @@ public class AccountHolderController {
     }
 
     @GetMapping("")
-    public ResponseEntity<Collection<AccountHolderResponseModel>> getBankAccounts() {
-
-        CacheControl cacheControl = CacheControl.maxAge(60, TimeUnit.SECONDS);
+    public ResponseEntity<Collection<AccountHolderResponseModel>> getAccountHolders() {
 
         Collection<AccountHolderResponseModel> returnValue = new ArrayList<>();
         Collection<AccountHolderDto> retrievedAccountHolders = accountHolderService.getAccountHolders();
 
         if (retrievedAccountHolders == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        else {
+            throw new AccountHolderNotFoundException("No AccountHolders found");
+        } else {
             for (AccountHolderDto dto : retrievedAccountHolders) {
                 AccountHolderResponseModel responseModel = new AccountHolderResponseModel();
                 BeanUtils.copyProperties(dto, responseModel);
                 returnValue.add(responseModel);
             }
 
-//            return new ResponseEntity<>(returnValue, HttpStatus.OK);
-
-            return ResponseEntity.ok()
-                    .cacheControl(cacheControl)
-                    .body(returnValue);
+            return ResponseEntity.ok(returnValue);
         }
     }
 
@@ -79,11 +72,11 @@ public class AccountHolderController {
         AccountHolderDto retrievedAccountHolderDto = accountHolderService.getAccountHolderById(id);
 
         if (retrievedAccountHolderDto == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            throw new AccountHolderNotFoundException(id);
         }
         else {
             BeanUtils.copyProperties(retrievedAccountHolderDto, returnValue);
-            return new ResponseEntity<>(returnValue, HttpStatus.OK);
+            return ResponseEntity.ok(returnValue);
         }
     }
 
@@ -96,7 +89,12 @@ public class AccountHolderController {
         AccountHolderDto createdAccountHolder = accountHolderService.createAccountHolder(accountHolderDto);
         BeanUtils.copyProperties(createdAccountHolder, returnValue);
 
-        return new ResponseEntity<>(returnValue, HttpStatus.OK);
+        final URI uri = MvcUriComponentsBuilder.fromController(getClass())
+                .path("/{id}")
+                .buildAndExpand(returnValue.getId())
+                .toUri();
+
+        return ResponseEntity.created(uri).body(returnValue);
     }
 
     @PutMapping("/{id}")
@@ -108,11 +106,11 @@ public class AccountHolderController {
         AccountHolderDto updatedAccountHolder = accountHolderService.updateAccountHolder(id, accountHolderDto);
 
         if (updatedAccountHolder == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            throw new AccountHolderNotFoundException(id);
         }
         else {
             BeanUtils.copyProperties(updatedAccountHolder, returnValue);
-            return new ResponseEntity<>(returnValue, HttpStatus.OK);
+            return ResponseEntity.noContent().build();
         }
     }
 
@@ -123,21 +121,21 @@ public class AccountHolderController {
         AccountHolderDto deletedAccountHolder = accountHolderService.deleteAccountHolder(id);
 
         if (deletedAccountHolder == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            throw new AccountHolderNotFoundException(id);
         } else {
             BeanUtils.copyProperties(deletedAccountHolder, returnValue);
-            return new ResponseEntity<>(returnValue, HttpStatus.OK);
+            return ResponseEntity.noContent().build();
         }
     }
 
     @GetMapping("{id}/accounts")
-    public ResponseEntity<HashSet<BankAccountResponseModel>> getBankAccountsbyAccountHolderId(@PathVariable("id") Long id) {
+    public ResponseEntity<HashSet<BankAccountResponseModel>> getBankAccountsByAccountHolderId(@PathVariable("id") Long id) {
 
         HashSet<BankAccountResponseModel> returnValue = new HashSet<>();
         HashSet<BankAccountDto> retrievedBankAccounts = accountHolderService.getBankAccountsByAccountHolderId(id);
 
         if (retrievedBankAccounts == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            throw new BankAccountNotFoundException("No BankAccounts found");
         }
         else {
             for (BankAccountDto dto : retrievedBankAccounts) {
@@ -146,7 +144,7 @@ public class AccountHolderController {
                 returnValue.add(responseModel);
             }
 
-            return new ResponseEntity<>(returnValue, HttpStatus.OK);
+            return ResponseEntity.ok(returnValue);
         }
     }
 }

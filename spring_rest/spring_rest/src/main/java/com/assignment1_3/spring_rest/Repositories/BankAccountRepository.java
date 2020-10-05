@@ -1,12 +1,10 @@
 package com.assignment1_3.spring_rest.Repositories;
 
-import com.assignment1_3.spring_rest.Models.BankAccountDto;
+import com.assignment1_3.spring_rest.Models.Dto.BankAccountDto;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 
 
 

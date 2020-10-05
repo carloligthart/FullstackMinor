@@ -1,7 +1,7 @@
 package com.assignment1_3.spring_rest.Services;
 
-import com.assignment1_3.spring_rest.Models.AccountHolderDto;
-import com.assignment1_3.spring_rest.Models.BankAccountDto;
+import com.assignment1_3.spring_rest.Models.Dto.AccountHolderDto;
+import com.assignment1_3.spring_rest.Models.Dto.BankAccountDto;
 import com.assignment1_3.spring_rest.Repositories.BankAccountAccountHolderRepository;
 import com.assignment1_3.spring_rest.Repositories.BankAccountRepository;
 import org.springframework.beans.BeanUtils;
@@ -10,8 +10,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 @Service
 public class BankAccountService {

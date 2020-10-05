@@ -1,37 +1,34 @@
 package com.assignment1_3.spring_rest.Repositories;
 
-import com.assignment1_3.spring_rest.Models.AccountHolderDto;
-import com.assignment1_3.spring_rest.Models.BankAccountDto;
-import com.assignment1_3.spring_rest.Services.AccountHolderService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.assignment1_3.spring_rest.Models.Dto.AccountHolderDto;
+import com.assignment1_3.spring_rest.Models.Dto.BankAccountDto;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 
 @Repository
 public class BankAccountAccountHolderRepository {
 
-    private Map<Long, HashSet<BankAccountDto>> accountHolderToBankAccount = new HashMap<>();      // Use constructor
+    private Map<Long, HashSet<BankAccountDto>> accountHolderToBankAccount = new HashMap<>();
     private Map<Long, HashSet<AccountHolderDto>> bankAccountToHolder = new HashMap<>();
 
-    public HashSet<BankAccountDto> getBankAccounts(Long accountHolderId) {   //set or hashset as return type?
+    public HashSet<BankAccountDto> getBankAccounts(Long accountHolderId) {
         return accountHolderToBankAccount.get(accountHolderId);
     }
 
-    public HashSet<AccountHolderDto> getAccountHolders(Long bankAccountId) {   //set or hashset as return type?
+    public HashSet<AccountHolderDto> getAccountHolders(Long bankAccountId) {
         return bankAccountToHolder.get(bankAccountId);
     }
 
-    public void addAccountHolder(AccountHolderDto accountHolder) {    // implementatie checken
+    public void addAccountHolder(AccountHolderDto accountHolder) {
         Long id = accountHolder.getId();
         accountHolderToBankAccount.put(id, new HashSet<>());
     }
 
-    public void addBankAccount(BankAccountDto bankAccount) {    // implementatie checken
+    public void addBankAccount(BankAccountDto bankAccount) {
         Long id = bankAccount.getId();
         bankAccountToHolder.put(id, new HashSet<>());
     }
