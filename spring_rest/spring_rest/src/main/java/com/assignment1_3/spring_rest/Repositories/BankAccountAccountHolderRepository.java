@@ -44,5 +44,4 @@ public class BankAccountAccountHolderRepository {
     public void unLinkAccountHolder(Long bankAccountId, AccountHolderDto accountHolder) {
         this.getBankAccounts(bankAccountId).remove(accountHolder);
     }
-
 }

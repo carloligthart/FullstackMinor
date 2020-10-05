@@ -17,10 +17,6 @@ public class AccountHolderRepository {
         accountHolders = new HashMap<Long, AccountHolderDto>();
     }
 
-    public boolean exists(Long id) {
-        return accountHolders.containsKey(id);
-    }
-
     public Collection<AccountHolderDto> getAccountHolders() {
         return accountHolders.values();
     }

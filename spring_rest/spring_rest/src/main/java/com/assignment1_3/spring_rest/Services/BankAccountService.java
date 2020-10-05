@@ -1,5 +1,7 @@
 package com.assignment1_3.spring_rest.Services;
 
+import com.assignment1_3.spring_rest.Exceptions.AccountHolderNotFoundException;
+import com.assignment1_3.spring_rest.Exceptions.BankAccountNotFoundException;
 import com.assignment1_3.spring_rest.Models.Dto.AccountHolderDto;
 import com.assignment1_3.spring_rest.Models.Dto.BankAccountDto;
 import com.assignment1_3.spring_rest.Repositories.BankAccountAccountHolderRepository;
@@ -45,7 +47,7 @@ public class BankAccountService {
         BankAccountDto currBankAccount = this.getBankAccountById(id);
 
         if (currBankAccount == null) {
-            return null;
+            throw new BankAccountNotFoundException(id);
         }
         else {
             BeanUtils.copyProperties(bankAccount, currBankAccount);
@@ -57,7 +59,7 @@ public class BankAccountService {
         BankAccountDto bankAccount = this.getBankAccountById(id);
 
         if (bankAccount == null) {
-            return null;
+            throw new BankAccountNotFoundException(id);
         }
         else {
             bankAccountRepository.deleteBankAccount(id);
@@ -69,7 +71,7 @@ public class BankAccountService {
         BankAccountDto bankAccount = this.getBankAccountById(id);
 
         if (bankAccount == null) {
-            return null;
+            throw new BankAccountNotFoundException(id);
         }
         else {
             bankAccount.setAccountBlocked(true);
@@ -81,7 +83,7 @@ public class BankAccountService {
         BankAccountDto bankAccount = this.getBankAccountById(id);
 
         if (bankAccount == null) {
-            return null;
+            throw new BankAccountNotFoundException(id);
         }
         else {
             bankAccount.setAccountBlocked(false);
@@ -91,12 +93,16 @@ public class BankAccountService {
 
     public void linkAccountHolder(Long bankAccountId, Long accountHolderId) {
         AccountHolderDto accountHolder = accountHolderService.getAccountHolderById(accountHolderId);
+        if (accountHolder == null) throw new AccountHolderNotFoundException(accountHolderId);
         BankAccountDto bankAccount = this.getBankAccountById(bankAccountId);
+        if (bankAccount == null) throw new AccountHolderNotFoundException(bankAccountId);
         bankAccountAccountHolderRepository.linkAccountHolder(bankAccount, accountHolder);
     }
 
     public void unLinkAccountHolder(Long bankAccountId, Long accountHolderId) {
         AccountHolderDto accountHolder = accountHolderService.getAccountHolderById(accountHolderId);
+        if (accountHolder == null) throw new AccountHolderNotFoundException(accountHolderId);
+        if (this.getBankAccountById(bankAccountId) == null) throw new AccountHolderNotFoundException(bankAccountId);
         bankAccountAccountHolderRepository.unLinkAccountHolder(bankAccountId,accountHolder);
     }
 

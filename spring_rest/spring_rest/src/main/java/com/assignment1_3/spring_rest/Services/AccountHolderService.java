@@ -1,5 +1,6 @@
 package com.assignment1_3.spring_rest.Services;
 
+import com.assignment1_3.spring_rest.Exceptions.AccountHolderNotFoundException;
 import com.assignment1_3.spring_rest.Models.Dto.AccountHolderDto;
 import com.assignment1_3.spring_rest.Models.Dto.BankAccountDto;
 import com.assignment1_3.spring_rest.Repositories.AccountHolderRepository;
@@ -34,7 +35,7 @@ public class AccountHolderService {
     public AccountHolderDto createAccountHolder(AccountHolderDto accountHolder) {
         accountHolder.generateId();
         AccountHolderDto createdAccountHolder = accountHolderRepository.addAccountHolder(accountHolder);
-        bankAccountAccountHolderRepository.addAccountHolder(createdAccountHolder);  // toevoegen aan de many to many map
+        bankAccountAccountHolderRepository.addAccountHolder(createdAccountHolder);
         return createdAccountHolder;
     }
 
@@ -43,7 +44,7 @@ public class AccountHolderService {
         AccountHolderDto currAccountHolder = this.getAccountHolderById(id);
 
         if (currAccountHolder == null) {
-            return null;
+            throw new AccountHolderNotFoundException(id);
         }
         else {
             BeanUtils.copyProperties(accountHolder, currAccountHolder);
@@ -55,7 +56,7 @@ public class AccountHolderService {
         AccountHolderDto accountHolder = this.getAccountHolderById(id);
 
         if (accountHolder == null) {
-            return null;
+            throw new AccountHolderNotFoundException(id);
         }
         else {
             accountHolderRepository.deleteAccountHolder(id);
@@ -66,6 +67,4 @@ public class AccountHolderService {
     public HashSet<BankAccountDto> getBankAccountsByAccountHolderId(Long id) {
         return bankAccountAccountHolderRepository.getBankAccounts(id);
     }
-
-
 }

@@ -6,24 +6,13 @@ import org.springframework.stereotype.Repository;
 import java.util.Collection;
 import java.util.HashMap;
 
-
-
-/*
-* Rekening aanmaken
-* Rekening blokkeren zonder verwijderen
-* Een lijst van alle rekeningen ophalen
-* Rekningen moeten in het geheugen worden opgeslagen
-* Rekening ophalen
-*
-* */
-
 @Repository
 public class BankAccountRepository {
 
     private final HashMap<Long, BankAccountDto> bankAccounts;
 
     public BankAccountRepository() {
-        bankAccounts = new HashMap<Long, BankAccountDto>();
+        bankAccounts = new HashMap<>();
     }
 
     public Collection<BankAccountDto> getBankAccounts() {
