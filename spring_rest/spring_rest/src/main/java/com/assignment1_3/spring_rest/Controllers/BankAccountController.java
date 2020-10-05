@@ -185,7 +185,7 @@ public class BankAccountController {
         return ResponseEntity.noContent().build();
     }
 
-    @DeleteMapping("{bankAccountId}/holders/{accountHolderId}/unlinkaccount")
+    @PutMapping("{bankAccountId}/holders/{accountHolderId}/unlinkaccount")
     public ResponseEntity<BankAccountResponseModel> unLinkAccountHolder(@PathVariable("bankAccountId") Long bankAccountId, @PathVariable("accountHolderId") Long accountHolderId) {
         bankAccountService.unLinkAccountHolder(bankAccountId, accountHolderId);
         return ResponseEntity.noContent().build();
