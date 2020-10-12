@@ -8,7 +8,7 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface AccountHolderMapper {
 
-    AccountHolder requestToEntityObject(AccountHolderRequestModel accountHolderRequestModel);  // change naming maybe?
+    AccountHolder requestToEntityObject(AccountHolderRequestModel accountHolderRequestModel);
 
     AccountHolderResponseModel entityObjectToResponseModel(AccountHolder accountHolder);
 

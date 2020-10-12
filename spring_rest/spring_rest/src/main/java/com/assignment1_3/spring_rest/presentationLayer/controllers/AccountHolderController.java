@@ -1,7 +1,8 @@
 package com.assignment1_3.spring_rest.presentationLayer.controllers;
 
-import com.assignment1_3.spring_rest.Exceptions.AccountHolderNotFoundException;
-import com.assignment1_3.spring_rest.Exceptions.BankAccountNotFoundException;
+
+import com.assignment1_3.spring_rest.exceptions.AccountHolderNotFoundException;
+import com.assignment1_3.spring_rest.exceptions.BankAccountNotFoundException;
 import com.assignment1_3.spring_rest.presentationLayer.mappers.AccountHolderMapper;
 import com.assignment1_3.spring_rest.presentationLayer.mappers.BankAccountMapper;
 import com.assignment1_3.spring_rest.dataLayer.models.AccountHolder;

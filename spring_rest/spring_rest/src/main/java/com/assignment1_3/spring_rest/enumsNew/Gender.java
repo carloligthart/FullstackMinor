@@ -1,4 +1,4 @@
-package com.assignment1_3.spring_rest.enums;
+package com.assignment1_3.spring_rest.enumsNew;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public enum Gender {

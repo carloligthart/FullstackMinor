@@ -5,11 +5,8 @@ import java.util.Set;
 
 @Entity
 @Table
-public class BankAccount {
+public class BankAccount extends BaseEntity {
 
-    @Id
-    @GeneratedValue
-    private Long id;
     @Column(nullable = false)
     private String iban;
     @Column(nullable = false)
@@ -19,14 +16,6 @@ public class BankAccount {
     @ManyToMany
     @JoinTable
     private Set<AccountHolder> accountHolders;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getIban() {
         return iban;

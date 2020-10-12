@@ -1,17 +1,14 @@
 package com.assignment1_3.spring_rest.dataLayer.models;
 
-import com.assignment1_3.spring_rest.enums.Gender;
+import com.assignment1_3.spring_rest.enumsNew.Gender;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 @Table
-public class AccountHolder {
+public class AccountHolder extends BaseEntity {
 
-    @Id
-    @GeneratedValue
-    private Long id;
     @Column(nullable = false)
     private String firstName;
     @Column(nullable = false)
@@ -30,14 +27,6 @@ public class AccountHolder {
 
     public void setAddress(Address address) {
         this.address = address;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getFirstName() {

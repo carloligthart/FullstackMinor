@@ -1,7 +1,7 @@
 package com.assignment1_3.spring_rest.presentationLayer.models;
 
 import com.assignment1_3.spring_rest.dataLayer.models.Address;
-import com.assignment1_3.spring_rest.enums.Gender;
+import com.assignment1_3.spring_rest.enumsNew.Gender;
 
 public class AccountHolderResponseModel {
 
